@@ -931,8 +931,10 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
 			// DropDown's from UIBarButtonItem are menus so we deselect the selected menu right after selection
             deselectRow(at: selectedRowIndex)
 		}
-
-		hide()
+        
+        if self.dismissMode != .manual {
+            hide()
+        }
 	}
 
 }
